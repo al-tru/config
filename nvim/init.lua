@@ -26,10 +26,4 @@ require("config.keymap")
 -- Set the theme
 vim.cmd.colorscheme "catppuccin"
 
--- Add trouble if needed
--- Add problems into lualine
--- Add which-key https://neovimcraft.com/plugin/folke/which-key.nvim/
 -- Make AI review for my config
--- Show files search on double shift
--- add icons
--- set contrl J Down and UP

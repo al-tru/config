@@ -1,23 +1,26 @@
 local map = vim.keymap.set
 local fzf = require("fzf-lua")
 
-map("n", "<Esc>", "<cmd>nohlsearch<CR>") -- clear search highlights
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 map("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Open file explorer" }) -- file explorer
 map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save file" }) -- save
 map("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit window" }) -- quit
 
 -- navigate between windows
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
+-- scroll half a page
+map("n", "<C-j>", "<C-d>", { desc = "Scroll half a page down" })
+map("n", "<C-k>", "<C-u>", { desc = "Scroll half a page up" })
 
 -- move selected lines
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
 -- fzf-lua
 map("n", "<leader>ff", fzf.files, { desc = "Find files" })
+map("n", "<leader><leader>", fzf.files, { desc = "Find files (double Space)" })
 map("n", "<leader>fg", fzf.live_grep, { desc = "Search project text" })
 map("n", "<leader>fb", fzf.buffers, { desc = "Find buffers" })
 map("n", "<leader>fr", fzf.oldfiles, { desc = "Recent files" })
@@ -26,6 +29,15 @@ map("n", "<leader>fs", fzf.lsp_document_symbols, { desc = "Find document symbols
 -- text Editor
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", { desc = "Format code" })
+
+-- Flutter
+map("n", "<leader>Fc", "<cmd>FlutterCommands<CR>", { desc = "Flutter command menu" })
+map("n", "<leader>Fr", "<cmd>FlutterRun<CR>", { desc = "Run Flutter project" })
+map("n", "<leader>Fh", "<cmd>FlutterReload<CR>", { desc = "Hot reload" })
+map("n", "<leader>FR", "<cmd>FlutterRestart<CR>", { desc = "Hot restart" })
+map("n", "<leader>Fq", "<cmd>FlutterQuit<CR>", { desc = "Stop Flutter app" })
+map("n", "<leader>Fd", "<cmd>FlutterDevices<CR>", { desc = "Select Flutter device" })
+map("n", "<leader>Fo", "<cmd>FlutterOutlineToggle<CR>", { desc = "Toggle Flutter widget outline" })
 
 -- dap (Debug adapter protocol)
 -- Debug execution
@@ -64,3 +76,10 @@ map("n", "<leader>gD", "<cmd>DiffviewClose<CR>", { desc = "Close Git diff" })
 map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Git file history" })
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open Lazygit" })
 
+-- diagnostics
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Workspace diagnostics" })
+map("n", "<leader>xb", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer diagnostics" })
+map("n", "<leader>xq", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix list" })
+map("n", "<leader>xl", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list" })
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<CR>", { desc = "Document symbols" })
+map("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<CR>", { desc = "LSP locations" })

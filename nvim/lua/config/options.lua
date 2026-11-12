@@ -37,7 +37,7 @@ opt.confirm = true         -- Confirm before losing changes
 -- UI behavior
 opt.mouse = "a"            -- Enable mouse
 opt.updatetime = 250       -- Update interval (ms)
-opt.timeoutlen = 400       -- Mapping timeout (ms)
+opt.timeoutlen = 1000      -- Time to finish a key mapping, including leader shortcuts (ms)
 opt.laststatus = 3         -- Global statusline
 -- opt.colorcolumn = "80"     -- Highlight line border
 
