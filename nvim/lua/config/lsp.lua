@@ -24,6 +24,8 @@ vim.lsp.config("lua_ls", {
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
+    "jdtls",
+    "kotlin_lsp",
   },
   automatic_enable = true,
 })

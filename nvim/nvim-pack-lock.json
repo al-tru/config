@@ -13,6 +13,10 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
+    "flutter-tools.nvim": {
+      "rev": "7034ae42d5c67708db076d20937c269c6c6e8937",
+      "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
+    },
     "fzf-lua": {
       "rev": "ded1c96d3d9d74634287d722431c26690968a4bf",
       "src": "https://github.com/ibhagwan/fzf-lua"

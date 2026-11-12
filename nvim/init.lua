@@ -26,11 +26,9 @@ require("config.keymap")
 -- Set the theme
 vim.cmd.colorscheme "catppuccin"
 
--- TODO: add git plugins
 -- Add trouble if needed
 -- Add problems into lualine
 -- Add which-key https://neovimcraft.com/plugin/folke/which-key.nvim/
--- Maybe change indent from 2 to 4
 -- Make AI review for my config
 -- Show files search on double shift
 -- add icons
