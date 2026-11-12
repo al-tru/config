@@ -40,3 +40,27 @@ map("n", "<leader>dr", dap.restart, { desc = "Debug: Restart" })
 map("n", "<leader>dq", dap.terminate, { desc = "Debug: Terminate" })
 map("n", "<leader>du", "<cmd>DapViewToggle<CR>", { desc = "Debug: Toggle UI" })
 
+-- TreeSitter keymaps:
+-- zc Close current fold
+-- zo Open current fold
+-- za Toggle current fold
+-- zM Close all folds
+-- zR Open all folds
+-- zj Go to next fold
+-- zk Go to previous fold
+
+-- git
+-- diffview keymaps:
+-- ]x           Next conflict
+-- [x           Previous conflict
+-- <leader>co   Choose ours
+-- <leader>ct   Choose theirs
+-- <leader>cb   Choose base
+-- <leader>ca   Keep both versions
+-- dx           Delete conflict region
+-- g<C-x>       Cycle merge layouts
+map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Open Git diff / merge conflicts" })
+map("n", "<leader>gD", "<cmd>DiffviewClose<CR>", { desc = "Close Git diff" })
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Git file history" })
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open Lazygit" })
+

@@ -11,8 +11,8 @@ opt.sidescrolloff = 8      -- Horizontal scroll margin
 opt.termguicolors = true   -- True color support
 
 -- Indentation
-opt.tabstop = 2            -- Tab width
-opt.shiftwidth = 2         -- Indentation width
+opt.tabstop = 4            -- Tab width
+opt.shiftwidth = 4         -- Indentation width
 opt.softtabstop = 2        -- Spaces when pressing Tab
 opt.expandtab = true       -- Use spaces instead of tabs
 opt.smartindent = true     -- Smart automatic indentation

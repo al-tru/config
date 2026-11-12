@@ -30,4 +30,8 @@ vim.cmd.colorscheme "catppuccin"
 -- Add trouble if needed
 -- Add problems into lualine
 -- Add which-key https://neovimcraft.com/plugin/folke/which-key.nvim/
+-- Maybe change indent from 2 to 4
 -- Make AI review for my config
+-- Show files search on double shift
+-- add icons
+-- set contrl J Down and UP

@@ -1,13 +1,6 @@
 -- For macos: brew install tree-sitter-cli
 
--- Keymaps:
--- zc Close current fold
--- zo Open current fold
--- za Toggle current fold
--- zM Close all folds
--- zR Open all folds
--- zj Go to next fold
--- zk Go to previous fold
+
 
 vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
