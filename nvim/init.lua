@@ -2,13 +2,32 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Load plugins
+local plugin_files = vim.fn.globpath(
+  vim.fn.stdpath("config") .. "/lua/plugins",
+  "*.lua",
+  false,
+  true
+)
+
+table.sort(plugin_files)
+
+for _, file in ipairs(plugin_files) do
+  dofile(file)
+end
+
 -- Core configurations
 require("config.options")
-require("config.plugins")
 require("config.lsp")
 require("config.autocmds")
 require("config.diagnostics")
 require("config.keymap")
 
--- Theme
+-- Set the theme
 vim.cmd.colorscheme "catppuccin"
+
+-- TODO: add git plugins
+-- Add trouble if needed
+-- Add problems into lualine
+-- Add which-key https://neovimcraft.com/plugin/folke/which-key.nvim/
+-- Make AI review for my config

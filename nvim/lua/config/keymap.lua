@@ -1,27 +1,18 @@
 local map = vim.keymap.set
 local fzf = require("fzf-lua")
 
--- Clear search highlights
-map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+map("n", "<Esc>", "<cmd>nohlsearch<CR>") -- clear search highlights
+map("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Open file explorer" }) -- file explorer
+map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save file" }) -- save
+map("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit window" }) -- quit
 
--- File explorer
-map("n", "<leader>e", "<cmd>Explore<CR>",
-  { desc = "Open file explorer" })
-
--- Save and quit
-map("n", "<leader>w", "<cmd>write<CR>",
-  { desc = "Save file" })
-
-map("n", "<leader>q", "<cmd>quit<CR>",
-  { desc = "Quit window" })
-
--- Navigate between windows
+-- navigate between windows
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
--- Move selected lines
+-- move selected lines
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -32,6 +23,20 @@ map("n", "<leader>fb", fzf.buffers, { desc = "Find buffers" })
 map("n", "<leader>fr", fzf.oldfiles, { desc = "Recent files" })
 map("n", "<leader>fs", fzf.lsp_document_symbols, { desc = "Find document symbols" })
 
--- Text Editor
+-- text Editor
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", { desc = "Format code" })
+
+-- dap (Debug adapter protocol)
+-- Debug execution
+local dap = require("dap")
+map("n", "<F5>", dap.continue, { desc = "Debug: Start/Continue", })
+map("n", "<F10>", dap.step_over, { desc = "Debug: Step over" })
+map("n", "<F11>", dap.step_into, { desc = "Debug: Step into" })
+map("n", "<F12>", dap.step_out, { desc = "Debug: Step out" })
+map("n", "<F9>", dap.toggle_breakpoint, { desc = "Debug: Toggle breakpoint" })
+map("n", "<leader>db", dap.set_breakpoint, { desc = "Debug: Conditional breakpoint" })
+map("n", "<leader>dr", dap.restart, { desc = "Debug: Restart" })
+map("n", "<leader>dq", dap.terminate, { desc = "Debug: Terminate" })
+map("n", "<leader>du", "<cmd>DapViewToggle<CR>", { desc = "Debug: Toggle UI" })
+
